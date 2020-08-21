@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eBay Auction</title>
+
+    <!-- Compiled and minified CSS -->
+    <!-- Materialze-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Css file link-->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!--Navigation bar-->
+    <nav>
+
+        <div class="nav-wrapper">
+            <!--Heading of website-->
+            <a class="brand-logo center">eBay Auction</a>
+            <ul class="right hide-on-med-and-down">
+                <!--Linkedin profile-->
+                <li><a href="https://www.linkedin.com/in/suryateja1998/">Linkedin</a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <!--End of navigation bar-->
+
+    <!--Content of the Webpage-->
+    <main>
+
+        <!--Container for all the elements-->
+        <div class="container">
+            <h1 class="title">Product Listing</h1>
+            <!--div for displaying data in a certain col space-->
+            <div class="col s12 m7">
+
+                <!--div for displaying horizontal card-->
+                <div class="card horizontal">
+                    <!--div for image-->
+                    <div class="card-image">
+                        <img style="padding-top: 40%;" src=" https://static1.fitbit.com/simple.b-cssdisabled-jpg.ha6a0d18907a296599fba08dd9198df3b.pack?items=%2Fcontent%2Fassets%2Fog-images%2Faltahr.jpg ">
+                    </div>
+                    <!--End of div for image-->
+                    <!--div for card contents-->
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <span class="card-title" style="text-align-last: center;"><h4><b>Fitbit Alta HR</b></h4></span>
+                            <p class="new_arrival center ">NEW</p>
+
+
+                            <!--Count down Timer-->
+                            <b><p id="timer">Data</p></b>
+                            <!--End of timer-->
+
+                            <!--Displaying all the details of the card in the form of a table-->
+                            <table>
+                                <tr>
+                                    <div class="input-field">
+                                        <td>
+                                            <b> Product code</b>
+                                        </td>
+                                        <td>
+                                            <input id="product_code" type="text" value="FBAHR001" class="validate" readonly>
+                                        </td>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Price</b>
+                                    </td>
+                                    <td>
+                                        <p class="price">AUD $214.00</p>
+                                        </br><small><b>Initial-bid</b></small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Availability</b>
+                                    </td>
+                                    <td>
+                                        In stock
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Condition</b>
+                                    </td>
+                                    <td>
+                                        New
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Brand</b>
+                                    </td>
+                                    <td>
+                                        Fitbit
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Seller</b>
+                                    </td>
+                                    <td>
+                                        Surya Teja
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Payment methods</b>
+                                    </td>
+                                    <td>
+                                        <img style="width: 150px;" src="https://www.bellaboutique.com.au/assets/images/Screenshot%202019-11-12%2013_06_13.png">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <b>Auction winner</b>
+                                    </td>
+                                    <td>
+                                        <!--Bid from seller-->
+                                        <textarea style="width: 300px;height: 50px;" id="eBayprod" readonly>Awaiting Results</textarea></textarea>
+                                        <!--End of bid-->
+                                    </td>
+                                </tr>
+                        </div>
+                        <!--Links for the cards-->
+                        <div class="card-action ">
+                            <tr>
+                                <td><a href="#modal_id" id="this_btn" class="btn blue modal-trigger">Place bid</a></td>
+                                <td><a href="#modal_moredetails" class="btn blue modal-trigger">More Details</a></td>
+                            </tr>
+                        </div>
+                        <!--End of links-->
+                        </table>
+                    </div>
+                </div>
+                <!--End of div for displaying horizontal card-->
+
+            </div>
+            <!--End of div for displaying data in a certain col space-->
+
+            <!--div for popup-form(modal)--bidder details-->
+            <div class="modal" id="modal_id">
+                <!--Form content-->
+                <div class="modal-content">
+                    <!--Form header-->
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color:black">Please enter your bid</h4>
+                    </div>
+
+                    <!--Form body-->
+                    <div class="modal-body">
+                        <form>
+                            <!--div for entering name-->
+                            <div class="form-group">
+                                <label for="bidder_name"><b>Please enter your name</b></label>
+                                <input type="text" class="form-control validate" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" title="Please enter your name. e.g. Will smith" placeholder="Buyer's name" id="bidder_name">
+                            </div>
+                            <!--div for entering email id-->
+                            <div class="form-group">
+                                <label for="bidder_email"><b>Please enter your Email id</b></label>
+                                <input type="email" class="form-control validate" placeholder="Buyer's email address" id="bidder_email">
+                            </div>
+                            <!--div for entering bid-->
+                            <div class="form-group">
+                                <label for="bidder_amount"><b>Please enter your bid</b></label>
+                                <input type="number" class="form-control validate" placeholder="Amount" id="bidder_amount"></input>
+                            </div>
+                            <!--div for submiting data-->
+                            <button class="btn waves-effect waves-light green" onclick="Buyer_detailsBtn()">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                            <!--div for closing the form-->
+                            <input type="button" id="CloseBtn" class="btn waves-effect modal-close red right" value="Close">
+                        </form>
+                    </div>
+                </div>
+                <!--End of form-->
+            </div>
+            <!--End of div for bidder details-->
+
+            <!--form for more details and seller details-->
+            <div id="modal_moredetails" class="modal" style="width: 40%;">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="modal-header">
+                            <div class="col s12">
+                                <ul class="tabs">
+                                    <li class="tab"><a class="active" href="#Description">Description</a></li>
+                                    <li class="tab"><a href="#seller_info">Seller Details</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div id="Description" class="col s12">
+                                <table class="centered highlight">
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PurePulse® Heart Rate</td>
+                                            <td>Get continuous, wrist-based heart rate tracking & simplified heart rate zones. <a href="https://www.fitbit.com/global/us/technology" style="text-decoration-line: underline;">Learn more.</a> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>All-Day Activity</td>
+                                            <td>Track steps, distance, calories burned, active minutes, hourly activity & stationary time.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reminders to Move</td>
+                                            <td>Get friendly Reminders to Move that encourage you to reach an hourly goal of 250 steps.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Smartphone Notifications</td>
+                                            <td>See call, text & calendar alerts on display when your phone is nearby.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Auto Sleep Tracking & Silent Alarms</td>
+                                            <td>Automatically track your sleep quality & wake up peacefully with a silent alarm.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sleep Stages</td>
+                                            <td>See your time in light, deep and REM stages to better understand your sleep quality. <a href="https://www.fitbit.com/uk/sleep-better" style="text-decoration-line: underline;">Learn more.</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SmartTrack™</td>
+                                            <td>Automatically recognizes select activities and records them in the exercise section of the Fitbit app.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Interchangeable Accessories</td>
+                                            <td>Switch up your look with accessory bands in metal, leather & more.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Long Battery Life</td>
+                                            <td>Battery life up to 7 days so you can track all day & night without needing a charge.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tap Display</td>
+                                            <td>Tap to see your stats, time & notifications on an OLED display, plus customize your clock face.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Syncs Wirelessly</td>
+                                            <td>Sync stats wirelessly & automatically to computers and 200+ leading iOS, Android and Windows devices.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="seller_info" class="col s12">
+                                <h5 style="text-align-last: center; padding-top: 10px;"><b>Contact information</b></h5>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            Email
+                                        </td>
+                                        <td>
+                                            sttalari@deakin.edu.au
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Phone number
+                                        </td>
+                                        <td>
+                                            +61 0450646698
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of form for more details and seller details-->
+
+        </div>
+        <!--End of container-->
+
+    </main>
+    <!--End of content-->
+
+    <!--webpage footer-->
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Copyright eBay
+
+            </div>
+        </div>
+    </footer>
+    <!--End of webpage footer-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--binding all required elements using binding.js-->
+    <script src="binding.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.title {
+    color: white;
+}
+
+main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+body {
+    background-image: url("https://www.gemius.com/files/PL/Fotolia_70869411_Subscription_Monthly_M.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.page-footer {
+    background-color: black;
+}
+
+.price {
+    color: #FE980F;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.new_arrival {
+    background: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0px 20px;
+}
+
+nav li a:hover {
+    background: red;
+}

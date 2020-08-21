@@ -1,0 +1,23 @@
+{
+  "name": "ebay_website",
+  "version": "1.0.0",
+  "description": "Items bought in an auction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Suryatalari/sit725-prac2.1.git"
+  },
+  "author": "Surya Teja Talari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Suryatalari/sit725-prac2.1/issues"
+  },
+  "homepage": "https://github.com/Suryatalari/sit725-prac2.1#readme",
+  "dependencies": {
+    "express": "*",
+    "mongodb": "*"
+  }
+}
